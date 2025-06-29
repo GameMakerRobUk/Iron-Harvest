@@ -30,10 +30,10 @@ global.data = {
 }
 
 /// @function Scene(_speaker, _audience, _dialogue, _next);
-/// @param {_speaker} array An array of strings, where the string is a character reference
-/// @param {_audience} array An array of strings, where the string is a character reference
-/// @param {_dialogue} array An array of strings, where the strings are text for dialogue.
-/// @param {_next} struct A struct containing what to do next after this current scene is done. Eg play another scene, or open a mini game etc
+/// @param {array} _speaker An array of strings, where the string is a character reference
+/// @param {array} _audience An array of strings, where the string is a character reference
+/// @param {array} _dialogue An array of strings, where the strings are text for dialogue.
+/// @param {struct} _next A struct containing what to do next after this current scene is done. Eg play another scene, or open a mini game etc
 
 function Scene(_speaker, _audience, _dialogue, _next) constructor{
 	speaker = _speaker;
