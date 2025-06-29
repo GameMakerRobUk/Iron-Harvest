@@ -1,3 +1,14 @@
+global.text[0] = [
+					"This is the text for dialogue_1.", 
+					"This is the second line for dialogue_1.", 
+					"This is the third line for dialogue_1."
+				];
+global.text[1] = [
+					"The speaker and audience has now switched.",
+					"This is the second line for the switched dialogue",
+					"This is the third line for the switched dialogue",
+				];
+
 global.data = {
 	backgrounds : {
 		bg_1 : new Background(bg_village, "Village 1"),
@@ -19,14 +30,18 @@ global.data = {
 		char_13 : new Character(spr_char_13, "Character 13"),
 		char_16 : new Character(spr_char_16, "Character 16"),
 	},
-	dialogue : {
-		dialogue_1 : "This is the text for dialogue_1.",
-		dialogue_2 : "This is the text for dialogue_2.",
-	},
 }
 
+global.data.dialogue = {
+	dialogue_1 : 
+	[
+		new Dialogue(["char_1"], ["char_4"], global.text[0]), //The text will clear after all of this text has been shown (and a button is pressed)
+		new Dialogue(["char_4"], ["char_1"], global.text[1]), //The text will clear after all of this text has been shown (and a button is pressed)
+	],
+};
+
 global.data.scenes = {
-	scene_one : new Scene("bg_1", ["char_1"], ["char_4"], "dialogue_1"),
+	scene_one : new Scene("bg_1", "dialogue_1"),
 	scene_two : undefined,
 }
 
