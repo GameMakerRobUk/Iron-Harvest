@@ -12,12 +12,41 @@ function Scene(_background, _dialogue_name, _next = undefined) constructor{
 	
 	next = _next; //@Rob We might not want there to be a next scene, or it might be a minigame instead
 	
+	static get_next_dialogue_element = function(){
+		
+		if (dialogue_index + 1 >= array_length(dialogue)){
+			show_debug_message("There are no more dialogue elements left");
+			text_index --;
+			exit;
+		}
+		
+		dialogue_index ++;
+		text_index = 0;
+	}
+	
+	static get_next_text_element = function(){
+		text_index ++;
+		
+		show_debug_message("get_next_text_element");
+		show_debug_message("dialogue[dialogue_index]: " + string(dialogue[dialogue_index]));
+		
+		var _text_array = dialogue[dialogue_index].text;
+		
+		if (text_index >= array_length(_text_array)){
+			show_debug_message("There are no more text elements left");
+			get_next_dialogue_element();	
+		}
+	}
+	
 	static step = function(){
-		show_debug_message("Scene step");	
+		if (mouse_check_button_pressed(mb_left)){
+			show_debug_message("Scene step clicking LMB");	
+			get_next_text_element();
+		}
 	}
 	
 	static draw = function(){
-		show_debug_message("Scene draw");
+		//show_debug_message("Scene draw");
 		
 		draw_sprite(background.sprite, 0, 0, 0);
 		
