@@ -20,24 +20,18 @@ global.data = {
 		char_16 : new Character(spr_char_16, "Character 16"),
 	},
 	dialogue : {
-		dialogue_1 : "",
-		dialogue_2 : "",
-	}
-	scenes : {
-		scene_one : new Scene([char_1], [char_2], dialogue_1, scene_two),
+		dialogue_1 : "This is the text for dialogue_1.",
+		dialogue_2 : "This is the text for dialogue_2.",
 	},
-		
 }
 
-/// @function Scene(_speaker, _audience, _dialogue, _next);
-/// @param {array} _speaker An array of strings, where the string is a character reference
-/// @param {array} _audience An array of strings, where the string is a character reference
-/// @param {array} _dialogue An array of strings, where the strings are text for dialogue.
-/// @param {struct} _next A struct containing what to do next after this current scene is done. Eg play another scene, or open a mini game etc
-
-function Scene(_speaker, _audience, _dialogue, _next) constructor{
-	speaker = _speaker;
-	audience = _audience;
-	dialogue = _dialogue;
-	next = _next; //@Rob We might not want there to be a next scene, or it might be a minigame instead
+global.data.scenes = {
+	scene_one : new Scene("bg_1", ["char_1"], ["char_4"], "dialogue_1"),
+	scene_two : undefined,
 }
+
+show_debug_message("global.data: " + string(global.data));
+
+enum STATES {scene};
+
+set_scene("scene_one");

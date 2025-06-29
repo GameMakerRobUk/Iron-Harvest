@@ -41,6 +41,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Background","path":"scripts/Background/Background.yy",},},
     {"id":{"name":"Character","path":"scripts/Character/Character.yy",},},
+    {"id":{"name":"Scene","path":"scripts/Scene/Scene.yy",},},
+    {"id":{"name":"SceneScripts","path":"scripts/SceneScripts/SceneScripts.yy",},},
     {"id":{"name":"scrInit","path":"scripts/scrInit/scrInit.yy",},},
     {"id":{"name":"bg_charming_village","path":"sprites/bg_charming_village/bg_charming_village.yy",},},
     {"id":{"name":"bg_kim_youngju_day","path":"sprites/bg_kim_youngju_day/bg_kim_youngju_day.yy",},},
